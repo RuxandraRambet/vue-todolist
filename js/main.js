@@ -30,9 +30,12 @@ const { createApp } = Vue;
                 text: 'guardare un film',
                 done: 'false',
             },
-        ]
-        
+        ],
       };
     },
- 
+    methods: {
+        removeTask(index){
+            this.toDos.splice(index, 1);
+        },
+    }
   }).mount('#app');
