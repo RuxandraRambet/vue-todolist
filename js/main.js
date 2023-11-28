@@ -31,11 +31,23 @@ const { createApp } = Vue;
                 done: 'false',
             },
         ],
+        newToDo: '',
+        
       };
     },
     methods: {
-        removeTask(index){
+        removeToDo(index){
             this.toDos.splice(index, 1);
+        },
+        addToDo(){
+            // console.log('nuovo to do');
+            if(this.newToDo.trim() !== ''){
+                this.toDos.push({
+                    text: this.newToDo,
+                    done: false,
+                });
+                this.newToDo = '';
+            }
         },
     }
   }).mount('#app');

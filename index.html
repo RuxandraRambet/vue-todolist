@@ -29,18 +29,32 @@
         <!-- Main -->
         <main>
             <div class="container">
+                <!-- Campo di input + aggiungi -->
+                <div class="row">
+                    <div class="col col-md-8 mx-auto">
+                        <div class="mb-3">
+                            <label for="text-todo">Inserisci un nuovo To Do</label>
+                        </div>
+                        <div class="input-group mb-3">
+                            <input type="text" id="text-todo" class="form-control" placeholder="Il tuo to do task" v-model="newToDo">
+                            <button class="btn btn-primary" type="button" id="add-todo" @click="addToDo">Aggiungi</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- /Campo di input + aggiungi -->
                 <div class="row">
                     <div class="col col-md-8 mx-auto">
                         <ul class="list-group" v-if="toDos.length > 0">
-                            <li v-for="(task , index) in toDos" class="list-group-item d-flex justify-content-between align-items-center" :class="{ 'text-decoration-line-through': task.done === 'true' }">
-                                <div>{{ index + 1 }} - {{ task.text }}</div>
+                            <li v-for="(toDo , index) in toDos" class="list-group-item d-flex justify-content-between align-items-center" :class="{ 'text-decoration-line-through': toDo.done === 'true' }">
+                                <div>{{ index + 1 }} - {{ toDo.text }}</div>
                                 <div>
-                                    <i class="fa-solid fa-xmark" role="button" @click="removeTask(index)"></i>
+                                    <i class="fa-solid fa-xmark" role="button" @click="removeToDo(index)"></i>
                                 </div> 
                             </li>
                         </ul>
                         <div class="alert alert-info" role="alert" v-else>
-                            Non ci sono altri Task!
+                            To Do finiti!
                         </div>
                     </div>
                 </div>
