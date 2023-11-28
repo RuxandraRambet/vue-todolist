@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue To Do List</title>
+     <!-- Bootstrap -->
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+     <!-- /Bootstrap -->
+
+     <!-- FontAwesome -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <!-- /FontAwesome -->
+
+     <!-- Stylesheet -->
+     <link rel="stylesheet" href="css/style.css">
+     <!-- /Stylesheet -->
+</head>
+<body>
+    <div id="app">
+        <!-- Header -->
+        <header>
+            <div class="container">
+                <h1 class="text-center my-5">To Do List</h1>
+            </div>
+        </header>
+        <!-- /Header -->
+
+        <!-- Main -->
+        <main>
+            <div class="container">
+                <div class="row">
+                    <div class="col col-md-8 mx-auto">
+                        <ul class="list-group">
+                            <li v-for="(task , index) in toDos" class="list-group-item d-flex justify-content-between align-items-center" :class="{ 'text-decoration-line-through': task.done === 'true' }">
+                                <div>{{ index + 1 }} - {{ task.text }}</div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <!-- /Main -->
+
+    </div>
+     <!-- Bootstrap Js -->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js" integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+" crossorigin="anonymous"></script>
+     <!-- Vue Js -->
+     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
+     <!-- My Js -->
+     <script src="js/main.js"></script>
+</body>
+</html>
