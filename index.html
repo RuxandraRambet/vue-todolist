@@ -29,20 +29,20 @@
         <!-- Main -->
         <main>
             <div class="container">
-                <!-- Campo di input + aggiungi -->
+                <!-- Campo di input + aggiungi + tasto Enter-->
                 <div class="row">
                     <div class="col col-md-8 mx-auto">
                         <div class="mb-3">
                             <label for="text-todo">Inserisci un nuovo To Do</label>
                         </div>
                         <div class="input-group mb-3">
-                            <input type="text" id="text-todo" class="form-control" placeholder="Il tuo to do task" v-model="newToDo">
+                            <input type="text" id="text-todo" class="form-control" placeholder="Il tuo to do task" v-model="newToDo" @keyup.enter="addToDo">
                             <button class="btn btn-primary" type="button" id="add-todo" @click="addToDo">Aggiungi</button>
                         </div>
                     </div>
                 </div>
                 
-                <!-- /Campo di input + aggiungi -->
+                <!-- /Campo di input + aggiungi + tasto Enter -->
                 <div class="row">
                     <div class="col col-md-8 mx-auto">
                         <ul class="list-group" v-if="toDos.length > 0">
