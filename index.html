@@ -46,7 +46,7 @@
                 <div class="row">
                     <div class="col col-md-8 mx-auto">
                         <ul class="list-group" v-if="toDos.length > 0">
-                            <li v-for="(toDo , index) in toDos" class="list-group-item d-flex justify-content-between align-items-center" :class="{ 'text-decoration-line-through': toDo.done === 'true' }">
+                            <li v-for="(toDo , index) in toDos" class="list-group-item d-flex justify-content-between align-items-center" :class="status(toDo.done)">
                                 <div>{{ index + 1 }} - {{ toDo.text }}</div>
                                 <div>
                                     <i class="fa-solid fa-xmark" role="button" @click="removeToDo(index)"></i>

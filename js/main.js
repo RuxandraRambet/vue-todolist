@@ -8,27 +8,27 @@ const { createApp } = Vue;
         toDos: [
             {
                 text: 'pranzare',
-                done: 'true',
+                done: true,
             },
             {
                 text: 'studiare',
-                done: 'true',
+                done: true,
             },
             {
                 text: 'leggere un libro',
-                done: 'false',
+                done: false,
             },
             {
                 text: 'fare la spesa',
-                done: 'true',
+                done: true,
             },
             {
                 text: 'mangiare una pizza',
-                done: 'false',
+                done: false,
             },
             {
                 text: 'guardare un film',
-                done: 'false',
+                done: false,
             },
         ],
         newToDo: '',
@@ -36,6 +36,9 @@ const { createApp } = Vue;
       };
     },
     methods: {
+        status(check){
+            if(check === true) return 'text-decoration-line-through';
+        },
         removeToDo(index){
             this.toDos.splice(index, 1);
         },
