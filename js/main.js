@@ -52,5 +52,8 @@ const { createApp } = Vue;
                 this.newToDo = '';
             }
         },
+        changeValue(index){
+            this.toDos[index].done = !this.toDos[index].done;
+        }
     }
   }).mount('#app');
